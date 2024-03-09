@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /*
     注意几点
     1. 版本选择了 java 8, 因为目前的 aspectj-maven-plugin 1.14.0 最高只支持到 java 16
-    2. 一定要用 maven 的 compile 来编译, idea 不会调用 ajc 编译器
+    TODO 2. 一定要用 maven 的 compile 来编译, idea 不会调用 ajc 编译器
  */
 @SpringBootApplication
 public class A09 {
