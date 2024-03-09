@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
     演示 request, session, application 作用域
     打开不同的浏览器, 刷新 http://localhost:8080/test 即可查看效果
+    // TODO Lin:必须先把ADD VM options点击出来，步骤如下：run→Edit→configurations→Modify options，然后再添加下面的代码
     如果 jdk > 8, 运行时请添加 --add-opens java.base/java.lang=ALL-UNNAMED
  */
 @SpringBootApplication
