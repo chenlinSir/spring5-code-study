@@ -734,6 +734,57 @@ AOP 底层实现方式之一是代理，由代理结合通知和目标，提供�
 
 代码参考项目 **demo6_advanced_aspectj_02**
 
+#### 通过修改字节码来实现class类增强
+
+agent类加载前
+
+``` java
+@Service
+public class MyService {
+    private static final Logger log = LoggerFactory.getLogger(MyService.class);
+
+    public MyService() {
+    }
+
+    public final void foo() {
+        log.debug("foo()");
+        this.bar();
+    }
+
+    public void bar() {
+        log.debug("bar()");
+    }
+}
+
+```
+
+agent类加载后
+
+``` java
+@Service
+public class MyService {
+    private static final Logger log = LoggerFactory.getLogger(MyService.class);
+
+    public MyService() {
+    }
+
+    public final void foo() {
+        MyAspect.aspectOf().before();
+        log.debug("foo()");
+        this.bar();
+    }
+
+    public void bar() {
+        MyAspect.aspectOf().before();
+        log.debug("bar()");
+    }
+}
+```
+
+使用arthas-boot.jar反编译，类字节码是这样子
+
+![1710140833618](https://cloud-image-chenlin.oss-cn-chengdu.aliyuncs.com/202403111507354.png)
+
 #### 收获💡
 
 1. 类加载时可以通过 agent 修改 class 实现增强
