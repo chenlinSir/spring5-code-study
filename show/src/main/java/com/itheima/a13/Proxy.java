@@ -25,8 +25,11 @@ public class Proxy extends Target {
             save0 = Target.class.getMethod("save");
             save1 = Target.class.getMethod("save", int.class);
             save2 = Target.class.getMethod("save", long.class);
+            //():无参方法 V：返回值为void
             save0Proxy = MethodProxy.create(Target.class, Proxy.class, "()V", "save", "saveSuper");
+            //(I):方参为int类型 V：返回值为void
             save1Proxy = MethodProxy.create(Target.class, Proxy.class, "(I)V", "save", "saveSuper");
+            //(J):方参为long类型 V：返回值为void
             save2Proxy = MethodProxy.create(Target.class, Proxy.class, "(J)V", "save", "saveSuper");
         } catch (NoSuchMethodException e) {
             throw new NoSuchMethodError(e.getMessage());
