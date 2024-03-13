@@ -29,7 +29,20 @@ public class A17_1 {
             学到了什么
                 a. 代理的创建时机
                     1. 初始化之后 (无循环依赖时)
+                                    Bean1()
+                                    Bean1 init()
+                                    [TRACE] 15:15:40.472 [main] o.s.a.a.a.AnnotationAwareAspectJAutoProxyCreator - Creating implicit proxy for bean 'bean1' with 0 common interceptors and 2 specific interceptors
+                                    Bean2()
+                                    Bean2 setBean1(bean1) class is: class org.springframework.aop.framework.autoproxy.A17_1$Bean1$$EnhancerBySpringCGLIB$$2d106fac
+                                    Bean2 init()
                     2. 实例创建后, 依赖注入前 (有循环依赖时), 并暂存于二级缓存
+                                    Bean1()
+                                    Bean2()
+                                    [TRACE] 15:16:54.099 [main] o.s.a.a.a.AnnotationAwareAspectJAutoProxyCreator - Creating implicit proxy for bean 'bean1' with 0 common interceptors and 2 specific interceptors
+                                    Bean2 setBean1(bean1) class is: class org.springframework.aop.framework.autoproxy.A17_1$Bean1$$EnhancerBySpringCGLIB$$2741d750
+                                    Bean2 init()
+                                    Bean1 setBean2(bean2) class is: class org.springframework.aop.framework.autoproxy.A17_1$Bean2
+                                    Bean1 init()
                 b. 依赖注入与初始化不应该被增强, 仍应被施加于原始对象
          */
     }
