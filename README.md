@@ -1,11 +1,16 @@
-## spring5-code-study 采坑记录
+## spring5-code-study 学习记录
 
 spring5代码底层学习 主分支
 
+#### 有疑问的点
+
 #### 遇到的问题
 
-- 1.jdk非法反射问题
-- 2.acj编译器编译问题
+##### 1.jdk非法反射问题
+
+##### 2.acj编译器编译问题
+
+##### 3.ASM插件未成功使用
 
 ## 容器与 bean
 
@@ -989,6 +994,67 @@ public class $Proxy0 extends Proxy implements A12.Foo {
 
 **com.itheima.a12.TestMethodInvoke**
 
+jdk.internal.reflect.GeneratedMethodAccessor2s
+
+``` java
+/*
+ * Decompiled with CFR.
+ *
+ * Could not load the following classes:
+ *  com.itheima.a12.TestMethodInvoke
+ */
+package jdk.internal.reflect;
+
+import com.itheima.a12.TestMethodInvoke;
+import java.lang.reflect.InvocationTargetException;
+import jdk.internal.reflect.MethodAccessorImpl;
+
+public class GeneratedMethodAccessor2
+extends MethodAccessorImpl {
+    /*
+     * Loose catch block
+     */
+    public Object invoke(Object object, Object[] objectArray) throws InvocationTargetException {
+        char c;
+        block9: {
+            if (objectArray.length != 1) {
+                throw new IllegalArgumentException();
+            }
+            Object object2 = objectArray[0];
+            if (object2 instanceof Byte) {
+                c = ((Byte)object2).byteValue();
+                break block9;
+            }
+            if (object2 instanceof Character) {
+                c = ((Character)object2).charValue();
+                break block9;
+            }
+            if (object2 instanceof Short) {
+                c = (char)((Short)object2).shortValue();
+                break block9;
+            }
+            if (object2 instanceof Integer) {
+                c = (char)((Integer)object2).intValue();
+                break block9;
+            }
+            throw new IllegalArgumentException();
+        }
+        try {
+            TestMethodInvoke.foo((int)c);
+            return null;
+        }
+        catch (Throwable throwable) {
+            throw new InvocationTargetException(throwable);
+        }
+        catch (ClassCastException | NullPointerException runtimeException) {
+            throw new IllegalArgumentException(super.toString());
+        }
+    }
+}
+```
+
+
+
 #### 收获💡
 
 1. 前 16 次反射性能较低
@@ -1172,7 +1238,7 @@ class JdkDynamicAopProxy {
 
 > ***注意***
 >
-> * 要区分本章节提到的 MethodInterceptor，它与之前 cglib 中用的的 MethodInterceptor 是不同的接口
+> * 要区分本章节提到的 MethodInterceptor，它与之前 cglib 中用的的 MethodInterceptor 是不同的接口，本章提到的是：org.aopalliance.intercept.MethodInterceptor;
 
 
 

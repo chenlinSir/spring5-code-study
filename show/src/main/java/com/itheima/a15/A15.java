@@ -43,7 +43,7 @@ public class A15 {
         factory.addAdvisor(advisor);
         factory.setInterfaces(target.getClass().getInterfaces());
         factory.setProxyTargetClass(false);
-        Target2 proxy = (Target2) factory.getProxy();
+        Target2 proxy = (Target2) factory.getProxy();//TODO Lin:如果目标实现了接口，这个地方就要转换成接口
         System.out.println(proxy.getClass());
         proxy.foo();
         proxy.bar();
