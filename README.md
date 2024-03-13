@@ -1388,8 +1388,6 @@ ih -->> -Proxy :
 2. 所谓静态通知，体现在上面方法的 Interceptors 部分，这些通知调用时无需再次检查切点，直接调用即可
 3. 结合目标与环绕通知链，创建 MethodInvocation 对象，通过它完成整个调用
 
-
-
 #### 演示2 - 模拟 MethodInvocation
 
 ##### 代码参考
@@ -1404,7 +1402,11 @@ ih -->> -Proxy :
 
 MethodInvocation 的编程技巧在实现拦截器、过滤器时能用上
 
+##### 递归代码实现解读
 
+​	这种方式实现叫：“责任链模式”
+
+![1710320432049](https://cloud-image-chenlin.oss-cn-chengdu.aliyuncs.com/202403131701149.png)
 
 ### 19) 动态通知调用
 
