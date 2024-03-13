@@ -18,7 +18,7 @@ public class A13 {
 //                return method.invoke(target, args); // 反射调用
                 // FastClass
 //                return methodProxy.invoke(target, args); // 内部无反射, 结合目标用
-                return methodProxy.invokeSuper(p, args); // 内部无反射, 结合代理用
+                return methodProxy.invokeSuper(p, args); // 内部无反射, 结合代理用 TODO Lin:只能调用saveSuper方法，不然会死循环
             }
         });
 
