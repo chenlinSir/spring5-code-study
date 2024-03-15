@@ -21,7 +21,9 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestResponseBody
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
-
+/**
+ * setCustomArgumentResolvers：设置自定义参数解析器
+ **/
 @Configuration
 @ComponentScan
 @PropertySource("classpath:application.properties")

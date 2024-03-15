@@ -16,7 +16,14 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
-
+/**
+ * AnnotationConfigServletWebServerApplicationContexts：基于注解配置的Servlet Web服务器应用上下文
+ * MockHttpServletRequest：模拟HTTP请求对象
+ * getContentAsByteArray：将内容获取为字节数组
+ * RequestMappingHandlerMapping ：请求映射处理器映射
+ * MyRequestMappingHandlerAdapter：我的请求映射处理器适配器
+ * getArgumentResolvers：获取参数解析器
+ **/
 public class A20 {
     private static final Logger log = LoggerFactory.getLogger(A20.class);
 
@@ -35,7 +42,7 @@ public class A20 {
 
         // 请求来了，获取控制器方法  返回处理器执行链对象
         MockHttpServletRequest request = new MockHttpServletRequest("GET", "/test4");
-        request.setParameter("name", "张三");
+            request.setParameter("name", "张三");
         request.addHeader("token", "某个令牌");
         MockHttpServletResponse response = new MockHttpServletResponse();
         HandlerExecutionChain chain = handlerMapping.getHandler(request);

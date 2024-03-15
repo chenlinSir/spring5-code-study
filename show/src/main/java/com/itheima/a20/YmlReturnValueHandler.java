@@ -7,7 +7,10 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 import org.yaml.snakeyaml.Yaml;
 
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * HandlerMethodReturnValueHandler：处理方法返回值处理器
+ * handleReturnValue：处理返回结果
+ **/
 public class YmlReturnValueHandler implements HandlerMethodReturnValueHandler {
     @Override
     public boolean supportsReturnType(MethodParameter returnType) {
