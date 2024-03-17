@@ -1609,9 +1609,11 @@ TypeConverterDelegate --> PropertyEditorRegistry
   * 再利用默认的 PropertyEditor 转换
   * 最后有一些特殊处理
 * SimpleTypeConverter 仅做类型转换
-* BeanWrapperImpl 为 bean 的属性赋值，当需要时做类型转换，走 Property
-* DirectFieldAccessor 为 bean 的属性赋值，当需要时做类型转换，走 Field
+* BeanWrapperImpl 为 bean 的属性赋值，当需要时做类型转换，走 Property （get与set方法）
+* DirectFieldAccessor 为 bean 的属性赋值，当需要时做类型转换，走 Field（成员变量）
 * ServletRequestDataBinder 为 bean 的属性执行绑定，当需要时做类型转换，根据 directFieldAccess 选择走 Property 还是 Field，具备校验与获取校验结果功能
+  * directFieldAccess 的布尔值为false：走Property；为true时走Field  
+
 
 
 
