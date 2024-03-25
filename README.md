@@ -2328,9 +2328,11 @@ curl https://start.spring.io
 
 ### 38) Boot War项目
 
+参考代码：[https://github.com/chenlinSir/spring-boot-war](spring-boot-war)
+
 步骤1：创建模块，区别在于打包方式选择 war
 
-<img src="https://cloud-image-chenlin.oss-cn-chengdu.aliyuncs.com/202403111417554.png" alt="image-20211021160145072" style="zoom: 50%;" />
+<img src="https://cloud     -image-chenlin.oss-cn-chengdu.aliyuncs.com/202403111417554.png" alt="image-20211021160145072" style="zoom: 50%;" />
 
 接下来勾选 Spring Web 支持
 
