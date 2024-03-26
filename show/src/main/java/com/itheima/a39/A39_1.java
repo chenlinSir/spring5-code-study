@@ -23,7 +23,7 @@ public class A39_1 {
         SpringApplication spring = new SpringApplication(A39_1.class);
         spring.setSources(Set.of("classpath:b01.xml"));
         System.out.println("2. 演示推断应用类型");
-        Method deduceFromClasspath = WebApplicationType.class.getDeclaredMethod("deduceFromClasspath");
+        Method deduceFromClasspath = WebApplicationType.class.getDeclaredMethod("deduceFromClasspath");//调用该方法，获取应用类型
         deduceFromClasspath.setAccessible(true);
         System.out.println("\t应用类型为:"+deduceFromClasspath.invoke(null));
         System.out.println("3. 演示 ApplicationContext 初始化器");
