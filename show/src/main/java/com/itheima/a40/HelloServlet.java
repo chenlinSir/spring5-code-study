@@ -12,7 +12,7 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=utf-8");
         resp.getWriter().print("""
-                <h3>hello</h3>
+                <h3>hello servlet</h3>
                 """);
     }
 }

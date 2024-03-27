@@ -109,7 +109,7 @@ hi=你好
 
 > ***注意***
 >
-> * ApplicationContext 中 MessageSource bean 的名字固定为 messageSource
+> * ApplicationContext 中 Me	ssageSource bean 的名字固定为 messageSource
 > * 使用 SpringBoot 时，国际化文件名固定为 messages
 > * 空的 messages.properties 也必须存在
 
