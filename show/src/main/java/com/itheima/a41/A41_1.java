@@ -42,7 +42,7 @@ public class A41_1 {
         }
     }
 
-    static class MyImportSelector implements DeferredImportSelector {
+    static class MyImportSelector implements DeferredImportSelector {//DeferredImportSelector接口实现，会让第三方的bean导入优先级会低于本项目
         @Override
         public String[] selectImports(AnnotationMetadata importingClassMetadata) {
 //            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -58,7 +58,7 @@ public class A41_1 {
     @Configuration // 第三方的配置类
     static class AutoConfiguration1 {
         @Bean
-        @ConditionalOnMissingBean
+        @ConditionalOnMissingBean//如果spring容器没有这个对象，则加载到spring内存里面
         public Bean1 bean1() {
             return new Bean1("第三方");
         }
