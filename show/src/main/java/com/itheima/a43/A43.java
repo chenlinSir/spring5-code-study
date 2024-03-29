@@ -19,7 +19,7 @@ public class A43 {
         System.out.println(context.getBean(Bean1.class));
 
         System.out.println(context.getBean(Bean1FactoryBean.class));
-        System.out.println(context.getBean("&bean1"));
+        System.out.println(context.getBean("&bean1"));//获取对象工厂，要加上&符号
 
         context.close();
 
