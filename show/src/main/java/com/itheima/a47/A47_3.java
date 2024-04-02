@@ -57,7 +57,9 @@ public class A47_3 {
     interface Service {
 
     }
-    @Component("service1") static class Service1 implements Service {
+    @Component("service1")
+    @Primary //如果添加了该注解，同类型对象优先注入
+    static class Service1 implements Service {
 
     }
     @Component("service2") static class Service2 implements Service {
