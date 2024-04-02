@@ -85,7 +85,7 @@ public class A47_2 {
 //        });
         for (Map.Entry<Class<?>, Object> entry : dependencies.entrySet()) {
             // 左边类型                      右边类型
-            if (entry.getKey().isAssignableFrom(dd3.getDependencyType())) {
+            if (entry.getKey().isAssignableFrom(dd3.getDependencyType())) {//右边类型是否为左边类型的子接口或子类
                 System.out.println(entry.getValue());
                 break;
             }
