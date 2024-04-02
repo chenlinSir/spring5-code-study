@@ -8,6 +8,14 @@ spring5代码底层学习 主分支
 
 ##### 1.jdk非法反射问题
 
+​	运行时在vm options添加参数
+
+``` tex
+--add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/jdk.internal.reflect=ALL-UNNAMED
+```
+
+
+
 ##### 2.acj编译器编译问题
 
 ##### 3.ASM插件未成功使用
