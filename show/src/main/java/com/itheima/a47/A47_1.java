@@ -57,7 +57,7 @@ public class A47_1 {
         resolver.setBeanFactory(beanFactory);
         Object proxy = resolver.getLazyResolutionProxyIfNecessary(dd5, "bean1");
         System.out.println(proxy);
-        System.out.println(proxy.getClass());
+        System.out.println(proxy.getClass());//解决非法反射问题，需要在vm添加参数
         /*
             学到了什么
                 1. Optional 及 ObjectFactory 对于内嵌类型的处理, 源码参考 ResolvableType
