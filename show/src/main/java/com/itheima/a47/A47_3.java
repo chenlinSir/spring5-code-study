@@ -51,7 +51,7 @@ public class A47_3 {
     }
 
     static class Target2 {
-        @Autowired private Service service3;
+        @Autowired private Service service3;//如果同类型对象有多个（没有添加@Primary），根据名字注入
     }
 
     interface Service {
