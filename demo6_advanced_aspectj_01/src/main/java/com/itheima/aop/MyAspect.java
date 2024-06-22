@@ -12,6 +12,6 @@ public class MyAspect {
 
     @Before("execution(* com.itheima.service.MyService.foo())")
     public void before() {
-        log.debug("before()");
+        log.debug("before()");//测试代码提交
     }
 }
